@@ -1,3 +1,13 @@
+const companies = [
+  "Google",
+  "Ericsson",
+  "ASML",
+  "Rabobank",
+  "Lenovo",
+  "CI&T",
+  "Samba Tech",
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -12,6 +22,15 @@ export default function HomePage() {
         <div className="actions">
           <a className="button primary" href="/career-check">Start your Tech Career Check</a>
           <a className="button" href="/community">Explore the community</a>
+        </div>
+      </section>
+
+      <section className="shell companies-section" aria-labelledby="companies-heading">
+        <div className="eyebrow" id="companies-heading">Worked with teams at:</div>
+        <div className="company-list" aria-label="Companies Rodolfo has worked with">
+          {companies.map((company) => (
+            <span className="company-name" key={company}>{company}</span>
+          ))}
         </div>
       </section>
 
